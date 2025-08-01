@@ -1,4 +1,4 @@
-# Terraform_Loadbalancer_-_VMSS_project
+# Terraform_Loadbalancer_&_VMSS_project
 
 A Terraform project to deploy an Azure Load Balancer with an Orchestrated Virtual Machine Scale Set (VMSS).
 
