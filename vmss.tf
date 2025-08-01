@@ -49,9 +49,9 @@ resource "azurerm_orchestrated_virtual_machine_scale_set" "vmss-01" {
 
 
 
-  lifecycle {
-    ignore_changes = [instances]
-  }
+  # lifecycle {
+  #   ignore_changes = [instances]
+  # }
 
 }
 

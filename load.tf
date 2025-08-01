@@ -40,11 +40,13 @@ resource "azurerm_lb_probe" "lb-probe" {
 
 resource "azurerm_lb_rule" "lb_rule01" {
   loadbalancer_id                = azurerm_lb.lb-01.id
-  name                           = "http-rule"
+  name                           = "http-rule-new"
   protocol                       = "Tcp"
   frontend_port                  = 80
   backend_port                   = 80
   frontend_ip_configuration_name = "frontendip"
+  probe_id = azurerm_lb_probe.lb-probe.id
+  backend_address_pool_ids = [azurerm_lb_backend_address_pool.lb-back.id]
 }
 
 resource "azurerm_lb_rule" "lb_rule02" {
@@ -54,6 +56,8 @@ resource "azurerm_lb_rule" "lb_rule02" {
   frontend_port                  = 443
   backend_port                   = 443
   frontend_ip_configuration_name = "frontendip"
+  probe_id = azurerm_lb_probe.lb-probe.id
+  backend_address_pool_ids = [azurerm_lb_backend_address_pool.lb-back.id]
 }
 
 
